@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="SwArch Praktikum" transaction-type="JTA">
+		<jta-data-source>java:/OracleDS</jta-data-source>
+		<class>model.Gebaude</class>
+		<class>model.Maschine</class>
+		<class>model.Mitarbeiter</class>
+		<class>model.Produktion</class>
+		<class>model.Raum</class>
+		<class>model.Standort</class>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="none"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<!--  property name="hibernate.connection.autocommit" value="true"/> -->
+			<!--  <property name="hibernate.enable_lazy_load_no_trans" value="true"/>-->
+		</properties>
+	</persistence-unit>
+</persistence>
+
+
