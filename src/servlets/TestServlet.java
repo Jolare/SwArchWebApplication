@@ -12,12 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.GebaudeInterface;
+import beans.KoordinateInterface;
 import beans.MaschineInterface;
 import beans.MitarbeiterInterface;
 import beans.ProduktionInterface;
 import beans.RaumInterface;
 import beans.StandortInterface;
 import model.Gebaude;
+import model.Koordinate;
 import model.Maschine;
 import model.Mitarbeiter;
 import model.Produktion;
@@ -45,6 +47,9 @@ public class TestServlet extends HttpServlet {
 	
 	@EJB(mappedName = "java:global/SwArchWebApplication/ProduktionBean!beans.ProduktionInterface") 
 	private ProduktionInterface produktionBean;
+	
+	@EJB(mappedName = "java:global/SwArchWebApplication/KoordinateBean!beans.KoordinateInterface") 
+	private KoordinateInterface koordinateBean;
 	
 	public TestServlet() {
 		super();
@@ -81,6 +86,13 @@ public class TestServlet extends HttpServlet {
 		List<Raum> rl = raumBean.getRaumList();
 		for(Raum r: rl){
 			out.write(r.getId()+" "+r.getGebaude().getName()+" "+"<br>");
+		}
+		out.write("</div>");
+		
+		out.write("<h1>Test Koordinate:</h1><div>");
+		List<Koordinate> kl = koordinateBean.getKoordinateList();
+		for(Koordinate k: kl){
+			out.write(k.getId()+" "+k.getLaengengrad()+" "+k.getBreitengrad()+" "+" "+k.getRaum().getId()+"<br>");
 		}
 		out.write("</div>");
 		

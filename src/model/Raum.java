@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Polygon;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -22,9 +21,6 @@ public class Raum implements Serializable{
 	@JoinColumn(name="gebaude_id")
 	private Gebaude gebaude;
 	
-	/*@Column(name="bereich")
-	private Polygon bereich;*/
-	
 	public Raum(){}
 
 	public int getId() {
@@ -42,12 +38,4 @@ public class Raum implements Serializable{
 	public void setGebaude(Gebaude gebaude) {
 		this.gebaude = gebaude;
 	}
-
-	/*public Polygon getBereich() {
-		return bereich;
-	}
-
-	public void setBereich(Polygon bereich) {
-		this.bereich = bereich;
-	}*/
 }
