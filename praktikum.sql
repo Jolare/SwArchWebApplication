@@ -57,3 +57,4 @@ insert into swarch_produktion(id,datum,maschine_id,nummer) values(1,to_date('01.
 insert into swarch_produktion(id,datum,maschine_id,nummer) values(2,to_date('05.05.2018','dd.mm.yyyy'),1,5);
 insert into swarch_produktion(id,datum,maschine_id,nummer) values(3,to_date('05.07.2018','dd.mm.yyyy'),2,40);
 insert into swarch_produktion(id,datum,maschine_id,nummer) values(4,to_date('09.09.2018','dd.mm.yyyy'),3,10);
+commit;
