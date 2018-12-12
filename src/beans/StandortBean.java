@@ -19,6 +19,7 @@ import model.Standort;
 @TransactionManagement(TransactionManagementType.BEAN)
 public class StandortBean implements StandortInterface, java.io.Serializable{
 	private static final long serialVersionUID = 1L;
+	
 	@PersistenceContext(unitName = "SwArch Praktikum")
 	private EntityManager manager;
 	@Resource
@@ -26,7 +27,7 @@ public class StandortBean implements StandortInterface, java.io.Serializable{
 
 
 	@SuppressWarnings("unchecked")
-	public List<Standort> getStandorte() {
+	public List<Standort> getStandortList() {
 		return manager.createQuery("select o from Standort o").getResultList();
 	}
 

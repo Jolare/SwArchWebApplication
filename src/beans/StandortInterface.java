@@ -8,7 +8,7 @@ import model.Standort;
 
 @Remote
 public interface StandortInterface {
-	List<Standort> getStandorte();
+	List<Standort> getStandortList();
 
 	Standort getStandort(int key);
 }

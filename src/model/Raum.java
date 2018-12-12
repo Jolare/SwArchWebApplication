@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,12 +18,12 @@ public class Raum implements Serializable{
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="gebaude_id")
 	private Gebaude gebaude;
 	
-	@Column(name="bereich")
-	private Polygon bereich;
+	/*@Column(name="bereich")
+	private Polygon bereich;*/
 	
 	public Raum(){}
 
@@ -44,11 +43,11 @@ public class Raum implements Serializable{
 		this.gebaude = gebaude;
 	}
 
-	public Polygon getBereich() {
+	/*public Polygon getBereich() {
 		return bereich;
 	}
 
 	public void setBereich(Polygon bereich) {
 		this.bereich = bereich;
-	}
+	}*/
 }

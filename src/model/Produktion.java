@@ -5,7 +5,6 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,8 +21,8 @@ public class Produktion implements Serializable{
 	@Column(name="datum")
 	private Date datum;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="maschinen_id")
+	@ManyToOne
+	@JoinColumn(name="maschine_id")
 	private Maschine maschine;
 	
 	@Column(name="nummer")

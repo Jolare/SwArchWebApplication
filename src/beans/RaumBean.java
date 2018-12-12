@@ -26,8 +26,8 @@ public class RaumBean implements RaumInterface, java.io.Serializable {
 
 
 	@SuppressWarnings("unchecked")
-	public List<Raum> getRaeume() throws NoSuchEntityException {
-		return manager.createQuery("SELECT o FROM Raum o").getResultList();
+	public List<Raum> getRaumList() throws NoSuchEntityException {
+		return manager.createQuery("select o from Raum o").getResultList();
 	}
 
 	public Raum getRaum(int key) {

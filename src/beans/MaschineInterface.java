@@ -1,6 +1,6 @@
 package beans;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.Remote;
 
@@ -9,7 +9,7 @@ import model.Maschine;
 @Remote
 public interface MaschineInterface {
 
-	Collection<Maschine> getMaschineList();
+	List<Maschine> getMaschineList();
 
 	Maschine getMaschine(int key);
 }

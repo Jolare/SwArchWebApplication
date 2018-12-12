@@ -4,7 +4,7 @@ import model.Maschine;
 import model.Produktion;
 
 import java.sql.Date;
-import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.Remote;
 import javax.ejb.Remove;
@@ -16,7 +16,7 @@ public interface ProduktionInterface {
 	@Remove
 	void checkout();
 	
-	Collection<Produktion> getProduktionList();
+	List<Produktion> getProduktionList();
 	
 	Produktion getProduktion(int key);
 }
