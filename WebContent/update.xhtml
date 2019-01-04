@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<ui:composition template="/WEB-INF/include/template.xhtml">
+	<ui:define name="body">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<main role="main" class="inner cover">
+		<h1 class="cover-heading">Daten ändern</h1>
+		<p class="lead"></p>
+		<form>
+			<!-- <div class="dropdown mb-3">
+				<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+					id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> Raum wählen</a>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<button id="raum1" class="dropdown-item" type="button">test</button>
+					<button id="raum2" class="dropdown-item" type="button"></button>
+					<button id="raum3" class="dropdown-item" type="button"></button>
+				</div>
+			</div> -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">Raum wählen</label>
+				</div>
+				<select class="custom-select" id="inputGroupSelect01">
+					<option selected="">Choose...</option>
+					<option value="1">raum1</option>
+					<option value="2">raum2</option>
+					<option value="3">raum3</option>
+				</select>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Tag, Monat, Jahr</span>
+				</div>
+				<input type="text" aria-label="Tag" class="form-control" /> <input type="text"
+					aria-label="Monat" class="form-control" /> <input type="text" aria-label="Jahr"
+					class="form-control" />
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Anzahl</span>
+				</div>
+				<input type="text" class="form-control" aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-default" />
+			</div>
+			<p class="lead">
+				<a href="#" class="btn btn-lg btn-secondary">Bestätigen</a>
+			</p>
+		</form>
+		</main>
+
+		<footer class="mastfoot mt-auto fixed-bottom">
+		<div class="inner">
+			<p>
+				Einfache Website by <a href="https://github.com/Felix7991"> @Felix Reichle</a>, <a
+					href="https://github.com/KreativerBenutzername">@Simon Sutoris</a> und <a
+					href="https://github.com/Jolare">@Johannes Harzmann-Deis</a>.
+			</p>
+		</div>
+		</footer>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

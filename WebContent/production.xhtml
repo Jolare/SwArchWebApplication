@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<ui:composition template="/WEB-INF/include/template.xhtml">
+	<ui:define name="body">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+			<main role="main" class="inner cover">
+			<h1 class="cover-heading">Produktionsübersicht</h1>
+			<p class="lead"></p>
+
+			<h:dataTable value="#{production.produktion}" var="produktion" styleClass="table"
+				headerClass="thead-dark">
+				<h:column>
+					<f:facet name="header">Datum</f:facet>
+					#{produktion.datum}
+					</h:column>
+				<h:column>
+					<f:facet name="header">Maschine</f:facet>
+					#{produktion.maschine.id}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Anzahl</f:facet>
+					#{produktion.nummer}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Mitarbeiter</f:facet>
+					#{produktion.maschine.mitarbeiter.vorname} #{produktion.maschine.mitarbeiter.nachname}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Gebäude</f:facet>
+					#{produktion.maschine.raum.gebaude.name}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Adresse</f:facet>
+					#{produktion.maschine.raum.gebaude.standort.strasse}, #{produktion.maschine.raum.gebaude.standort.plz} #{produktion.maschine.raum.gebaude.standort.ort}
+				</h:column>
+			</h:dataTable> <!-- <p class="lead">
+				<table class="table" id="table-1">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Datum</th>
+							<th scope="col">Maschine</th>
+							<th scope="col">Anzahl</th>
+							<th scope="col">Mitarbeiter</th>
+							<th scope="col">Gebäude</th>
+							<th scope="col">Adresse</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td scope="row">a</td>
+							<td scope="row">b</td>
+							<td scope="row">c</td>
+							<td scope="row">d</td>
+							<td scope="row">e</td>
+							<td scope="row">f</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+			</p> --> </main>
+
+			<footer class="mastfoot mt-auto fixed-bottom">
+			<div class="inner">
+				<p>
+					Einfache Website by <a href="https://github.com/Felix7991">@Felix Reichle</a>, <a
+						href="https://github.com/KreativerBenutzername">@Simon Sutoris</a> und <a
+						href="https://github.com/Jolare">@Johannes Harzmann-Deis</a>.
+				</p>
+			</div>
+			</footer>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

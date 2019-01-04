@@ -10,6 +10,7 @@
 		<class>model.Produktion</class>
 		<class>model.Raum</class>
 		<class>model.Standort</class>
+		<class>model.Koordinate</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="none"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
