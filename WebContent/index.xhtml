@@ -6,9 +6,20 @@
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 			<main role="main" class="inner cover">
 			<h1 class="cover-heading">Aktueller Standort</h1>
-			<p class="lead" id="demo">Sie befinden sich momentan nicht in einem der eingespeicherten
+			<p class="lead" id="demo" hidden="true">Sie befinden sich momentan nicht in einem der eingespeicherten
 				Produktionsräume.</p>
-				<button onclick="getLocation()">Try It</button>
+				<button class="tworem" onclick="getLocation()">Try It</button>
+				<!--  escape="false" rendered="#{koordinate.id eq -1}" -->
+			<p class="lead">Raum <h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).id}"></h:outputText><br/>
+			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.name}"></h:outputText><br/>
+			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.strasse}"></h:outputText>, 
+			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.plz}"></h:outputText><span> </span>
+			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.ort}"></h:outputText>
+			<h:form id="form">
+			<h:inputHidden id="latitude" value="#{coordinate.x}"/>
+			<h:inputHidden id="longitude" value="#{coordinate.y}"/>
+			<h:commandButton value="submit" onclick="getVars()"/></h:form>
+			</p>
 			</main>
 			<footer class="mastfoot mt-auto fixed-bottom">
 			<div class="inner">
@@ -21,6 +32,27 @@
 			</footer>
 		</div>
 		<script>
+		var latitude;
+		var longitude;
+		var watchID = navigator.geolocation.watchPosition(function(position) {
+			  latitude = position.coords.latitude;
+			  longitude = position.coords.longitude;
+			});
+		window.onload = navigator.geolocation.watchPosition(function(position) {
+			  latitude = position.coords.latitude;
+			  longitude = position.coords.longitude;
+			  document.getElementById()
+			  console.log(latitude);
+			  console.log(longitude);
+			});
+		function getVars() {
+		    // ...
+		    var x = position.coords.latitude;
+		    var y = position.coords.longitude;
+
+		    document.getElementById("formId:x").value = x;
+		    document.getElementById("formId:y").value = y;
+		}
 		var x = document.getElementById("demo");
 		function getLocation() {
    			//x.innerHTML = "test";

@@ -42,8 +42,6 @@ public class ProduktionBean implements ProduktionInterface, java.io.Serializable
 		produktion.setNummer(nummer);
 	}
 	
-	
-	
 	@Remove
 	public void checkout(){
 		UserTransaction ut = ejbContext.getUserTransaction();

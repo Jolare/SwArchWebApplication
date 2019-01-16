@@ -60,6 +60,14 @@ insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(1,48.20
 insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(2,48.209227,9.032572,1);
 insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(3,48.209198,9.032500,1);
 insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(4,48.209253,9.032461,1);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(5,0,0,2);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(6,5,0,2);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(7,5,5,2);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(8,0,5,2);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(9,48.2093569,9.0320732,3);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(10,48.2091055,9.0320158,3);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(11,48.2094335,9.0328859,3);
+insert into swarch_koordinate(id,laengengrad,breitengrad,raum_id) values(12,48.2093371,9.0321737,3);
 insert into swarch_maschine(id,raum_id,mitarbeiter_id) values(1,4,1);
 insert into swarch_maschine(id,raum_id,mitarbeiter_id) values(2,4,2);
 insert into swarch_maschine(id,raum_id,mitarbeiter_id) values(3,5,3);
