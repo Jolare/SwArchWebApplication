@@ -20,6 +20,8 @@ public class KoordinateManagedBean {
 	private double x;
 	private double y;
 
+	private Raum currentRaum;
+
 	public static final String EJBName = "java:global/SwArchWebApplication/KoordinateBean!beans.KoordinateInterface";
 	
 	@EJB(mappedName = EJBName)
@@ -30,7 +32,7 @@ public class KoordinateManagedBean {
 //		
 //	}
 	
-	public Raum getRaum(double x, double y) {
+	public Raum getRaum() {
 		System.out.println(x);
 		System.out.println(y);
 		Raum raum = null;
@@ -64,8 +66,12 @@ public class KoordinateManagedBean {
 					polygon.lineTo(latitude, longitude);
 					roomCount++;
 					if(polygon.contains(x, y)) {
+						System.out.println("Du befindest dich im Raum "+raum.getId());
+						currentRaum = raum;
 						return raum;
 					} else {
+						System.out.println("Du befindest dich in keinem Raum");
+						currentRaum = null;
 						return null;
 					}
 				}
@@ -73,6 +79,8 @@ public class KoordinateManagedBean {
 					polygon.lineTo(latitude, longitude);
 					roomCount++;
 					if(polygon.contains(x, y)) {
+						System.out.println("Du befindest dich im Raum "+raum.getId());
+						currentRaum = raum;
 						return raum;
 					}
 					raum = null;
@@ -86,6 +94,8 @@ public class KoordinateManagedBean {
 				}
 			}
 		}
+		System.out.println("Du befindest dich im Raum "+raum.getId());
+		currentRaum = raum;
 		return raum;
 	}
 
@@ -103,6 +113,15 @@ public class KoordinateManagedBean {
 
 	public void setY(double y) {
 		this.y = y;
+	}
+	
+
+	public Raum getCurrentRaum() {
+		return currentRaum;
+	}
+
+	public void setCurrentRaum(Raum currentRaum) {
+		this.currentRaum = currentRaum;
 	}
 
 }
