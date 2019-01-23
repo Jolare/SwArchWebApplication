@@ -10,16 +10,15 @@
 				Produktionsräume.</p>
 				<button class="tworem" onclick="getLocation()">Try It</button>
 				<!--  escape="false" rendered="#{koordinate.id eq -1}" -->
-			<p class="lead">Raum <h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).id}"></h:outputText><br/>
-			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.name}"></h:outputText><br/>
-			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.strasse}"></h:outputText>, 
-			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.plz}"></h:outputText><span> </span>
-			<h:outputText class="lead" value="#{coordinate.getRaum(latitude.value,longitude.value).gebaude.standort.ort}"></h:outputText>
+			<p class="lead" id="p1">'Raum <h:outputText class="lead" value="#{coordinate.raum.id}"></h:outputText><br/>
+				<h:outputText class="lead" value="#{coordinate.raum.gebaude.name}"></h:outputText><br/>
+				<h:outputText class="lead" value="#{coordinate.raum.gebaude.standort.strasse}"></h:outputText>, 
+				<h:outputText class="lead" value="#{coordinate.raum.gebaude.standort.plz}"></h:outputText><span> </span>
+				<h:outputText class="lead" value="#{coordinate.raum.gebaude.standort.ort}"></h:outputText>';</p>
 			<h:form id="form">
-			<h:inputHidden id="latitude" value="#{coordinate.x}"/>
-			<h:inputHidden id="longitude" value="#{coordinate.y}"/>
-			<h:commandButton value="submit" onclick="getVars()"/></h:form>
-			</p>
+			<h:inputHidden id="latitude" value="#{coordinate.x}" valueChangeListener="#{coordinate.changeListenerX}"/>
+			<h:inputHidden id="longitude" value="#{coordinate.y}" valueChangeListener="#{coordinate.changeListenerY}"/>
+			</h:form>
 			</main>
 			<footer class="mastfoot mt-auto fixed-bottom">
 			<div class="inner">
@@ -38,20 +37,52 @@
 			  latitude = position.coords.latitude;
 			  longitude = position.coords.longitude;
 			});
-		window.onload = navigator.geolocation.watchPosition(function(position) {
+		window.onload = function(){
+			//if (typeof(Storage) == "undefined")
+		    //{
+		    //    console.log("Your browser doesn't support webstorage");
+		    //} 
+		    //else if (sessionStorage.getItem("ui_flag") === null)
+		    //{
+		     //   sessionStorage.setItem("ui_flag", 1);
+		        navigator.geolocation.getCurrentPosition(function(position) {
+					  latitude = position.coords.latitude;
+					  longitude = position.coords.longitude;
+					  
+					  console.log(latitude);
+					  console.log(longitude);
+					  document.getElementById("form:latitude").value = latitude;
+					  document.getElementById("form:longitude").value = longitude;
+					  console.log(document.getElementById("form:latitude").value);
+					  document.getElementById("form").submit();
+		    })
+		    //}
+		    //else
+		    //{
+		        // Keine Ausführung. Code wurde bereits aufgerufen.
+		    //} 
+			};
+		function init(){
+			 navigator.geolocation.getCurrentPosition(function(position) {
 			  latitude = position.coords.latitude;
 			  longitude = position.coords.longitude;
-			  document.getElementById()
+			  
 			  console.log(latitude);
 			  console.log(longitude);
-			});
-		function getVars() {
-		    // ...
-		    var x = position.coords.latitude;
-		    var y = position.coords.longitude;
+			  document.getElementById("form:latitude").value = latitude;
+			  document.getElementById("form:longitude").value = longitude;
+			  console.log(document.getElementById("form:latitude").value);
+			  
 
-		    document.getElementById("formId:x").value = x;
-		    document.getElementById("formId:y").value = y;
+			});}
+		function getVars() {
+		    var x = latitude;
+		    var y = longitude;
+			console.log(x);
+			console.log(y);
+		    document.getElementById("form:latitude").value = x;
+		    document.getElementById("form:longitude	").value = y;
+		    
 		}
 		var x = document.getElementById("demo");
 		function getLocation() {

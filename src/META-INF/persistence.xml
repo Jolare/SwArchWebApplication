@@ -5,12 +5,12 @@
 	<persistence-unit name="SwArch Praktikum" transaction-type="JTA">
 		<jta-data-source>java:/OracleDS</jta-data-source>
 		<class>model.Gebaude</class>
+		<class>model.Koordinate</class>
 		<class>model.Maschine</class>
 		<class>model.Mitarbeiter</class>
 		<class>model.Produktion</class>
 		<class>model.Raum</class>
 		<class>model.Standort</class>
-		<class>model.Koordinate</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="none"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
