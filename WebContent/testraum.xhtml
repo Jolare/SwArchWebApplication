@@ -6,15 +6,16 @@
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 			<main role="main" class="inner cover">
 			<h1 class="cover-heading">Aktueller Standort</h1>
-			<p class="lead" id="demo"></p>
 				<button class="tworem" onclick="getLocation()">Standort</button>
+			<p class="lead" id="demo"></p>
 				<h:form id="formId">
 					<h:inputHidden id="x" value="#{coordinate.x}"/>
 					<h:inputHidden id="y" value="#{coordinate.y}"/>
 					<h:commandButton value="Raum" onclick="getVars()" action="#{coordinate.getRaum}"/>
 				</h:form>
 				<p>
-					#{coordinate.currentRaum.id}
+					#{coordinate.currentRaumString}
+					
 				</p>
 			</main>
 			<footer class="mastfoot mt-auto fixed-bottom">

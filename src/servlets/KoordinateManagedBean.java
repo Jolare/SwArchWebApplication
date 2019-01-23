@@ -23,6 +23,7 @@ public class KoordinateManagedBean {
 	private double y;
 
 	private Raum currentRaum;
+	private String currentRaumString = "Sie befinden sich in keinem Raum";
 
 	public static final String EJBName = "java:global/SwArchWebApplication/KoordinateBean!beans.KoordinateInterface";
 	
@@ -74,6 +75,11 @@ public class KoordinateManagedBean {
 			checkedraum.add(selectedraum);
 		}
 
+		if(raum!=null)
+			setCurrentRaumString("Raum "+raum.getId()+" Gebäude "+raum.getGebaude().getName()+" "+raum.getGebaude().getStandort().getPlz()+" "+raum.getGebaude().getStandort().getOrt()+" "+raum.getGebaude().getStandort().getStrasse());
+		else
+			setCurrentRaumString("Sie befinden sich in keinem Raum");
+		
 		currentRaum = raum;
 		return raum;
 	}
@@ -101,6 +107,14 @@ public class KoordinateManagedBean {
 
 	public void setCurrentRaum(Raum currentRaum) {
 		this.currentRaum = currentRaum;
+	}
+
+	public String getCurrentRaumString() {
+		return currentRaumString;
+	}
+
+	public void setCurrentRaumString(String currentRaumString) {
+		this.currentRaumString = currentRaumString;
 	}
 
 }
